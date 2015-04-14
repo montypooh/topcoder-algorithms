@@ -1,0 +1,67 @@
+PROBLEM STATEMENT
+If X and Y are two strings of equal length N, then the difference between them is defined as the number of indices i where the i-th character of X and the i-th character of Y are different.  For example, the difference between the words "ant" and "art" is 1.
+
+You are given two strings, A and B, where the length of A is less than or equal to the length of B.  You can apply an arbitrary number of operations to A, where each operation is one of the following:
+
+
+Choose a character c and add it to the beginning of A.
+Choose a character c and add it to the end of A.
+
+
+Apply the operations in such a way that A and B have the same length and the difference between them is as small as possible.  Return this minimum possible difference.
+
+DEFINITION
+Class:DifferentStrings
+Method:minimize
+Parameters:string, string
+Returns:int
+Method signature:int minimize(string A, string B)
+
+
+CONSTRAINTS
+-A and B will each contain between 1 and 50 characters, inclusive.
+-A and B will both contain only lowercase letters ('a'-'z').
+-The length of A will be less than or equal to the length of B.
+
+
+EXAMPLES
+
+0)
+"koder"
+"topcoder"
+
+Returns: 1
+
+You can prepend "top" to "koder" and you'll get "topkoder". The difference between "topkoder" and "topcoder" is 1.
+
+1)
+"hello"
+"xello"
+
+Returns: 1
+
+A and B already have the same length so you cannot add any characters to A.
+
+2)
+"abc"
+"topabcoder"
+
+Returns: 0
+
+
+
+3)
+"adaabc"
+"aababbc"
+
+Returns: 2
+
+
+
+4)
+"giorgi"
+"igroig"
+
+Returns: 6
+
+

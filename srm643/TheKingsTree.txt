@@ -1,0 +1,79 @@
+PROBLEM STATEMENT
+
+The King of Byteland is going to decorate a rooted tree.
+The tree has N vertices, numbered 0 through N-1.
+Vertex 0 is the root of the tree.
+
+
+
+
+You are given the description of the tree in a int[] parent.
+For each valid i, the parent of vertex i+1 is parent[i].
+Note that the number of the parent is always smaller than the number of the child.
+
+
+
+
+Each vertex of the tree must be painted in one of two colors: red or green.
+After the entire tree has been painted we can compute the cost of the painting.
+For each i, the cost of painting vertex i is defined as the number of vertices that are in the subtree rooted at i and have the same color as vertex i.
+For example, if a vertex is red and all other vertices in its subtree are green, the cost of painting this vertex is 1.
+The cost of painting the entire tree is the sum of all costs of painting its vertices.
+
+
+
+
+Return the minimum cost of painting the given tree.
+
+
+DEFINITION
+Class:TheKingsTree
+Method:getNumber
+Parameters:int[]
+Returns:int
+Method signature:int getNumber(int[] parent)
+
+
+CONSTRAINTS
+-N will be between 1 and 50, inclusive.
+-parent will contain exactly N-1 elements.
+-For each i, parent[i] will be between 0 and i, inclusive.
+
+
+EXAMPLES
+
+0)
+{0, 0, 0}
+
+Returns: 4
+
+The root vertex 0 has three children: vertices 1, 2, and 3.
+One optimal way to color this tree is to color all three children red and their parent green.
+
+1)
+{0, 1, 2, 3, 4}
+
+Returns: 12
+
+Color any three vertices green and the other three red.
+
+2)
+{0, 1, 2, 3, 1}
+
+Returns: 10
+
+
+
+3)
+{0, 0, 1, 0, 4, 3, 5, 2, 0, 7, 9, 2, 4, 5, 3, 1}
+
+Returns: 26
+
+
+
+4)
+{}
+
+Returns: 1
+
+

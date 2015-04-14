@@ -1,0 +1,100 @@
+PROBLEM STATEMENT
+The cities in Gridland form a rectangular grid.
+Some of the cities can be inhabited by foxes.
+We will call those cities available.
+You are given the map of Gridland in a vector <string> board.
+The character '.' (period) represents an available city, the character '#' a city that is not available.
+Two cities are considered adjacent if they lie next to each other in the same row or in the same column.
+
+
+You are also given an int k, meaning that k foxes would like to move into Gridland.
+Each fox must choose a different available city.
+Additionally, the set of cities they choose must be connected.
+(Formally, for each pair of cities that will be inhabited by our foxes there must be a way of reaching one from the other if you can only travel between adjacent cities and you can only travel via cities inhabited by our foxes.)
+
+
+Let X be the number of ways in which the foxes can choose their k cities.
+Return the value (X modulo 1,000,000,009).
+
+
+Two ways of choosing the cities are different if a city is chosen in one of them but not in the other.
+(In other words, the foxes are indistinguishable.)
+
+DEFINITION
+Class:FoxConnection4
+Method:howManyWays
+Parameters:vector <string>, int
+Returns:int
+Method signature:int howManyWays(vector <string> board, int k)
+
+
+CONSTRAINTS
+-board will contain between 1 and 10 elements, inclusive.
+-Every element in board will contain same number of characters.
+-Each element in board will contain between 1 and 10 characters, inclusive.
+-Each character in board will be '.' or '#'.
+-k will be between 1 and 8, inclusive.
+
+
+EXAMPLES
+
+0)
+{"....."}
+
+3
+
+Returns: 3
+
+There are 3 ways: "xxx..", ".xxx.", "..xxx".
+
+1)
+{".#.#",
+ "#.#.",
+ ".#.#",
+ "#.#."}
+
+2
+
+Returns: 0
+
+There are two foxes, but no two available cities are adjacent. Thus, there is no valid way to select the cities for the foxes.
+
+2)
+{"##.",
+ "...",
+ ".##"}
+
+3
+
+Returns: 3
+
+
+
+3)
+{"....",
+ "....",
+ "....",
+ "...."}
+4
+
+Returns: 113
+
+
+
+4)
+{".....#....",
+ ".#........",
+ "....#.##..",
+ "#......#..",
+ "....#.....",
+ "..........",
+ ".##....#..",
+ "..##......",
+ "........##",
+ "......#.#."}
+
+8
+
+Returns: 22369
+
+
